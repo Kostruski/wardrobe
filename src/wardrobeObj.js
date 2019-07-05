@@ -12,7 +12,7 @@ const Item = class {
     constructor(id, type, temperature, style, timeOfDay, color, pattern, userId="userId", userName="userName", owned=true, isVisible=true, isLiked=false, isUnliked=false, matchesWith=[])
     {   
         this.id = id;
-        this.src = `./itemsImg/${this.id}.jpg`;
+        this.src = `./${this.id}.jpg`;
         this.userId=userId;
         this.userName=userName;
         this.owned= owned;
@@ -71,7 +71,21 @@ const items = [
     [ "ft7", "firstTop", ['cold','chilly','warm'], ['elegant'], ['work'], "brown", "pattern" ],
     [ "ft8", "firstTop", ['cold','chilly','warm','hot'], ['casual'], ['afterhours','weekend'], "black", "print" ],
     [ "ft9", "firstTop", ['cold','chilly','warm','hot'], ['casual','sport'], ['afterhours','weekend'], "white", "print" ],
-    [ "ft10", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "navy", "print" ]
+    [ "ft10", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "navy", "print" ],
+    [ "ft11", "firstTop", ['cold','chilly','warm'], ['elegant'], ['afterhours'], "blue", "plain" ],
+    [ "ft12", "firstTop", ['cold','chilly','warm','hot'], ['elegant','casual'], ['work','afterhours'], "blue", "plain" ],
+    [ "ft13", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "white", "print" ],
+    [ "ft14", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "navy", "plain" ],
+    [ "ft15", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "navy", "pattern" ],
+    [ "ft16", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "lightgray", "plain" ],
+    [ "ft17", "firstTop", ['warm','hot'], ['casual'], ['afterhours'], "black", "print" ],
+    [ "ft18", "firstTop", ['chilly','warm','hot'], ['casual'], ['afterhours'], "orange", "plain" ],
+    [ "ft19", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "blue", "pattern" ],
+    [ "ft20", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "brown", "plain" ]
+
+
+
+
 
 
 

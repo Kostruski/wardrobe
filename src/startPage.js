@@ -1,20 +1,14 @@
 import React from 'react';
 import {myWardrobe} from "./wardrobeObj.js";
-import SingleItem from './singleItem.js'
+import SimpleSlider from './simpleSlider.js'
 
 
 class StartPage extends React.Component {
     constructor() {
         super();
         this.state = {
-            wardrobe: {}
+            wardrobe: myWardrobe
          }
-    }
-
-    componentDidMount(){
-        this.setState({
-            wardrobe : myWardrobe
-        })        
     }
 
 
@@ -22,12 +16,10 @@ class StartPage extends React.Component {
     render() { 
 
        
-    //   console.log(this.state.wardrobe.myItems)
-
-       
+          
         return ( 
             <div>
-              <SingleItem items={this.state.wardrobe.myItems}/>
+              <SimpleSlider items={this.state.wardrobe} />
             </div>
          );
     }
