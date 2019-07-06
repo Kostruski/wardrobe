@@ -1,0 +1,11 @@
+.nav {
+    grid-area: n;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div {
+        margin-bottom: 30px;
+    }
+}

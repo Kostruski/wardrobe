@@ -1,50 +1,51 @@
-import React from 'react';
+import React, { Component } from "react";
+import SlidersPage from "./slidersPage";
+import Header from "./header";
+import Navigation from "./navigation";
+import AddElement from "./addElement";
+import MyWardrobe from "./myWardrobe";
+import StartPageMain from "./startPageMain";
 import {myWardrobe} from "./wardrobeObj.js";
-import DressSlider from './dressSlider.js'
-import FirstTopSlider from './firstTopSlider.js'
 
 
-class StartPage extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            wardrobe: myWardrobe,
-            firstTop: [],
-            secondTop: [],
-            dress: [],
-            bottom: [],
-            shoes: [],
-            accessories: []
-         }
-    }
-
-    componentDidMount() {
-        const items = this.state.wardrobe.myItems
-        items.forEach(el => this.setState((prev) => ({[el.type] : [...prev[el.type], el]})))
-       
-    }
-
-
-
-    render() { 
-        console.log(this.state.firstTop)
-        if(this.state.dress.length>0) {
-            return ( 
-               <div className="slidersWrap">
-                 <DressSlider key={0} items={this.state.dress} />
-                 <FirstTopSlider key={1} items={this.state.firstTop} />
-               </div>
-            );
-        }
-        else {
-            return(
-                null
-            )
-         
-        }
-          
-        
-    }
-}
+export default class StartPage extends Component {
+  state = {
+    headerVisible: true,  
+    wardrobe: myWardrobe,  
+    toBeDisplayed: 0,
+    keywords: ['casual'],
+    colors: ["blue"],
+    removed: [],
  
-export default StartPage;
+  };
+
+  navigate = (num) => {
+      this.setState({toBeDisplayed: num})
+  }
+
+//   remove = (id) => {
+//       const toBeRemoved = 
+//   }
+
+  render() {
+
+    const displayComponets = [
+      <StartPageMain />,
+      <SlidersPage
+        wardrobe={this.state.wardrobe}
+        keywords={this.state.keywords}
+        colors={this.state.colors}
+      />,
+      <MyWardrobe />,
+      <AddElement />
+    ];
+
+    return (
+      <div className="startPage">
+        <Header />       
+        <Navigation navigate={this.navigate} />
+        {displayComponets[this.state.toBeDisplayed]}        
+      </div>
+    );
+  }
+}

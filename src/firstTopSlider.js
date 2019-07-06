@@ -10,8 +10,8 @@ export default class FirstTopSlider extends Component {
       slideIndex: 0,
       toShow: [],
       count: 0,
-      keywords: ['casual'],
-      colors: ["black"],
+      keywords: this.props.keywords,
+      colors: this.props.colors,
       arr: this.props.items
     };
   }

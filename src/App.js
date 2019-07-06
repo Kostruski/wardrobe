@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import StartPage from './startPage'
+import StartPage from './startPage.js'
 
 function App() {
   return (

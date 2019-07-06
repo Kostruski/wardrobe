@@ -10,8 +10,8 @@ export default class DressSlider extends Component {
       slideIndex: 0,
       toShow: [],
       count: 0,
-      keywords: ['casual'],
-      colors: ["black"],
+      keywords: this.props.keywords,
+      colors: this.props.colors,
       arr: this.props.items
     };
   }
@@ -33,18 +33,15 @@ export default class DressSlider extends Component {
       )
         toShow.push(i);
     });
-    this.setState({ toShow }, () => {
-      console.log(this.state.toShow);
-    });
+    this.setState({ toShow });
   }
 
   showSelected = () => {
-    const arr = this.state.arr;
+   
     const indexOfSlideToShow = this.state.count % this.state.toShow.length;
     this.slider.slickGoTo(this.state.toShow[indexOfSlideToShow]);
     this.setState(prev => ({ count: prev.count + 1 }));
-    const indexInNotFilteredArr = this.state.toShow[indexOfSlideToShow]; // numer saljdu dla slidera
-    console.log("slider1", this.slider)
+  
   };
 
   render() {
