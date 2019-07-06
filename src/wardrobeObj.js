@@ -39,9 +39,9 @@ const Item = class {
 // main color = white / black / gray / green / brown / blue / red / pink / orange / navy / light gray / violet / yellow
 
 const items = [
-    ["d0", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours",'weekend'], "brown", "plain"],
-    ["d1", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours",'weekend'], "yellow", "pattern"],
-    [ "d2", "dress", ['warm','hot'], ['casual'], ['afterhours','weekend'], "orange", "plain" ],
+    ["d0", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours"], "brown", "plain"],
+    ["d1", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours"], "yellow", "pattern"],
+    [ "d2", "dress", ['warm','hot'], ['casual'], ['afterhours'], "orange", "plain" ],
     [ "d3", "dress", ['chilly','warm'], ['elegant'], ['work','afterhours'], "black", "plain" ],
     [ "d4", "dress", ['chilly','warm','hot'], ['elegant'], ['work','afterhours'], "black", "plain" ],
     [ "d5", "dress", ['warm','hot'], ['casual'], ['weekend'], "navy", "plain" ],
@@ -49,11 +49,11 @@ const items = [
     [ "d7", "dress", ['warm','hot'], ['elegant','casual'], ['afterhours'], "navy", "pattern" ],
     [ "d8", "dress", ['cold','chilly','warm'], ['elegant'], ['work','afterhours'], "black", "pattern" ],
     [ "d9", "dress", ['chilly','warm','hot'], ['casual'], ['work','afterhours'], "navy", "plain" ],
-    [ "d10", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours','weekend'], "lightgray", "plain" ],
+    [ "d10", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours'], "lightgray", "plain" ],
     [ "d11", "dress", ['cold','chilly'], ['sport'], ['weekend'], "pink", "pattern" ],
-    [ "d12", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours','weekend'], "green", "pattern" ],
-    [ "d13", "dress", ['chilly'], ['casual'], ['afterhours','weekend'], "brown", "plain" ],
-    [ "d14", "dress", ['warm'], ['casual'], ['afterhours','weekend'], "yellow", "plain" ],
+    [ "d12", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours'], "green", "pattern" ],
+    [ "d13", "dress", ['chilly'], ['casual'], ['afterhours'], "brown", "plain" ],
+    [ "d14", "dress", ['warm'], ['casual'], ['afterhours'], "yellow", "plain" ],
     [ "d15", "dress", ['cold','chilly','warm','hot'], ['elegant'], ['afterhours'], "yellow", "pattern" ],
     [ "d16", "dress", ['cold','chilly','warm','hot'], ['elegant'], ['afterhours'], "black", "plain" ],
     [ "d17", "dress", ['warm','hot'], ['casual'], ['afterhours'], "gray", "print" ],
@@ -69,19 +69,19 @@ const items = [
     [ "ft5", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "white", "plain" ],
     [ "ft6", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "white", "plain" ],
     [ "ft7", "firstTop", ['cold','chilly','warm'], ['elegant'], ['work'], "brown", "pattern" ],
-    [ "ft8", "firstTop", ['cold','chilly','warm','hot'], ['casual'], ['afterhours','weekend'], "black", "print" ],
-    [ "ft9", "firstTop", ['cold','chilly','warm','hot'], ['casual','sport'], ['afterhours','weekend'], "white", "print" ],
+    [ "ft8", "firstTop", ['cold','chilly','warm','hot'], ['casual'], ['afterhours'], "black", "print" ],
+    [ "ft9", "firstTop", ['cold','chilly','warm','hot'], ['casual','sport'], ['afterhours'], "white", "print" ],
     [ "ft10", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "navy", "print" ],
     [ "ft11", "firstTop", ['cold','chilly','warm'], ['elegant'], ['afterhours'], "blue", "plain" ],
     [ "ft12", "firstTop", ['cold','chilly','warm','hot'], ['elegant','casual'], ['work','afterhours'], "blue", "plain" ],
-    [ "ft13", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "white", "print" ],
-    [ "ft14", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "navy", "plain" ],
-    [ "ft15", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "navy", "pattern" ],
-    [ "ft16", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "lightgray", "plain" ],
+    [ "ft13", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours'], "white", "print" ],
+    [ "ft14", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours'], "navy", "plain" ],
+    [ "ft15", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours'], "navy", "pattern" ],
+    [ "ft16", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours'], "lightgray", "plain" ],
     [ "ft17", "firstTop", ['warm','hot'], ['casual'], ['afterhours'], "black", "print" ],
     [ "ft18", "firstTop", ['chilly','warm','hot'], ['casual'], ['afterhours'], "orange", "plain" ],
     [ "ft19", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "blue", "pattern" ],
-    [ "ft20", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "brown", "plain" ]
+    // [ "ft20", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "brown", "plain" ]
 
 
 
@@ -115,4 +115,55 @@ function createObj(arr) {
 }
 
 createObj(items)
+
+
+
+
+
+// wersja zapasowa z opcją wokr weekend i afterhours
+
+// const items = [
+// ["d0", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours",'weekend'], "brown", "plain"],
+// ["d1", "dress", ["warm", "hot"], ["casual", "sport"], ["afterhours",'weekend'], "yellow", "pattern"],
+// [ "d2", "dress", ['warm','hot'], ['casual'], ['afterhours','weekend'], "orange", "plain" ],
+// [ "d3", "dress", ['chilly','warm'], ['elegant'], ['work','afterhours'], "black", "plain" ],
+// [ "d4", "dress", ['chilly','warm','hot'], ['elegant'], ['work','afterhours'], "black", "plain" ],
+// [ "d5", "dress", ['warm','hot'], ['casual'], ['weekend'], "navy", "plain" ],
+// [ "d6", "dress", ['cold','chilly','warm','hot'], ['elegant'], ['afterhours'], "red", "plain" ],
+// [ "d7", "dress", ['warm','hot'], ['elegant','casual'], ['afterhours'], "navy", "pattern" ],
+// [ "d8", "dress", ['cold','chilly','warm'], ['elegant'], ['work','afterhours'], "black", "pattern" ],
+// [ "d9", "dress", ['chilly','warm','hot'], ['casual'], ['work','afterhours'], "navy", "plain" ],
+// [ "d10", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours','weekend'], "lightgray", "plain" ],
+// [ "d11", "dress", ['cold','chilly'], ['sport'], ['weekend'], "pink", "pattern" ],
+// [ "d12", "dress", ['cold','chilly'], ['casual','sport'], ['afterhours','weekend'], "green", "pattern" ],
+// [ "d13", "dress", ['chilly'], ['casual'], ['afterhours','weekend'], "brown", "plain" ],
+// [ "d14", "dress", ['warm'], ['casual'], ['afterhours','weekend'], "yellow", "plain" ],
+// [ "d15", "dress", ['cold','chilly','warm','hot'], ['elegant'], ['afterhours'], "yellow", "pattern" ],
+// [ "d16", "dress", ['cold','chilly','warm','hot'], ['elegant'], ['afterhours'], "black", "plain" ],
+// [ "d17", "dress", ['warm','hot'], ['casual'], ['afterhours'], "gray", "print" ],
+// [ "d18", "dress", ['warm','hot'], ['casual','sport'], ['weekend'], "blue", "pattern" ],
+// [ "d19", "dress", ['warm','hot'], ['casual'], ['afterhours'], "green", "print" ],
+// [ "d20", "dress", ['chilly','warm','hot'], ['casual'], ['work','afterhours'], "blue", "pattern" ],
+// // fristTop
+// [ "ft0", "firstTop", ['chilly','warm','hot'], ['sport'], ['weekend'], "white", "print" ],
+// [ "ft1", "firstTop", ['chilly','warm','hot'], ['sport'], ['weekend'], "gray", "print" ],
+// [ "ft2", "firstTop", ['chilly','warm','hot'], ['sport'], ['weekend'], "orange", "plain" ],
+// [ "ft3", "firstTop", ['cold','chilly','warm','hot'], ['sport'], ['weekend'], "blue", "plain" ],
+// [ "ft4", "firstTop", ['cold','chilly','warm','hot'], ['casual'], ['work','afterhours'], "navy", "pattern" ],
+// [ "ft5", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "white", "plain" ],
+// [ "ft6", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "white", "plain" ],
+// [ "ft7", "firstTop", ['cold','chilly','warm'], ['elegant'], ['work'], "brown", "pattern" ],
+// [ "ft8", "firstTop", ['cold','chilly','warm','hot'], ['casual'], ['afterhours','weekend'], "black", "print" ],
+// [ "ft9", "firstTop", ['cold','chilly','warm','hot'], ['casual','sport'], ['afterhours','weekend'], "white", "print" ],
+// [ "ft10", "firstTop", ['cold','chilly','warm','hot'], ['elegant'], ['work','afterhours'], "navy", "print" ],
+// [ "ft11", "firstTop", ['cold','chilly','warm'], ['elegant'], ['afterhours'], "blue", "plain" ],
+// [ "ft12", "firstTop", ['cold','chilly','warm','hot'], ['elegant','casual'], ['work','afterhours'], "blue", "plain" ],
+// [ "ft13", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "white", "print" ],
+// [ "ft14", "firstTop", ['chilly','warm','hot'], ['sport'], ['afterhours','weekend'], "navy", "plain" ],
+// [ "ft15", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "navy", "pattern" ],
+// [ "ft16", "firstTop", ['cold','chilly','warm'], ['casual','sport'], ['afterhours','weekend'], "lightgray", "plain" ],
+// [ "ft17", "firstTop", ['warm','hot'], ['casual'], ['afterhours'], "black", "print" ],
+// [ "ft18", "firstTop", ['chilly','warm','hot'], ['casual'], ['afterhours'], "orange", "plain" ],
+// [ "ft19", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "blue", "pattern" ],
+// // [ "ft20", "firstTop", ['chilly','warm','hot'], ['elegant','casual'], ['work'], "brown", "plain" ]
 
