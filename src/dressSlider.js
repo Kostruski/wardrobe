@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 const images = require.context("../public/itemsImg", true);
 
-export default class SimpleSlider extends Component {
+export default class DressSlider extends Component {
   constructor(props) {
     super(props);
 
@@ -44,7 +44,7 @@ export default class SimpleSlider extends Component {
     this.slider.slickGoTo(this.state.toShow[indexOfSlideToShow]);
     this.setState(prev => ({ count: prev.count + 1 }));
     const indexInNotFilteredArr = this.state.toShow[indexOfSlideToShow]; // numer saljdu dla slidera
-   
+    console.log("slider1", this.slider)
   };
 
   render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {myWardrobe} from "./wardrobeObj.js";
-import SimpleSlider from './simpleSlider.js'
+import DressSlider from './dressSlider.js'
+import FirstTopSlider from './firstTopSlider.js'
 
 
 class StartPage extends React.Component {
@@ -30,8 +31,8 @@ class StartPage extends React.Component {
         if(this.state.dress.length>0) {
             return ( 
                <div className="slidersWrap">
-                 <SimpleSlider items={this.state.dress} />
-                 <SimpleSlider items={this.state.firstTop} />
+                 <DressSlider key={0} items={this.state.dress} />
+                 <FirstTopSlider key={1} items={this.state.firstTop} />
                </div>
             );
         }
