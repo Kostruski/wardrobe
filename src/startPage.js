@@ -6,46 +6,73 @@ import AddElement from "./addElement";
 import MyWardrobe from "./myWardrobe";
 import StartPageMain from "./startPageMain";
 import {myWardrobe} from "./wardrobeObj.js";
+import {toggleUnderline} from './utilityFunctions.js'
+
 
 
 export default class StartPage extends Component {
-  state = {
-    headerVisible: true,  
-    wardrobe: myWardrobe,  
-    toBeDisplayed: 0,
-    keywords: ['casual'],
-    colors: ["blue"],
-    removed: [],
- 
-  };
+                 state = {
+                   headerVisible: true,
+                   wardrobe: myWardrobe.myItems,
+                   toBeDisplayed: 0,
+                   keywords: ["casual"],
+                   colors: ["blue"],
+                   removed: []
+                 };
 
-  navigate = (num) => {
-      this.setState({toBeDisplayed: num})
-  }
+                 navigate = (e, num) => {
+                   this.setState({ toBeDisplayed: num });
+                   toggleUnderline(e);
+                 };
 
-//   remove = (id) => {
-//       const toBeRemoved = 
-//   }
+                 remove = id => {
+                   const tempArr = this.state.wardrobe;
 
-  render() {
+                   tempArr.forEach(el => {
+                     if (el.id === id) {
+                       el.isVisible = !el.isVisible;
+                     }
+                   });
 
-    const displayComponets = [
-      <StartPageMain />,
-      <SlidersPage
-        wardrobe={this.state.wardrobe}
-        keywords={this.state.keywords}
-        colors={this.state.colors}
-      />,
-      <MyWardrobe />,
-      <AddElement />
-    ];
+                   const visibleItems = tempArr.filter(
+                     el => el.isVisible
+                   );
+                   const hiddenItems = tempArr.filter(
+                     el => !el.isVisible
+                   );
 
-    return (
-      <div className="startPage">
-        <Header />       
-        <Navigation navigate={this.navigate} />
-        {displayComponets[this.state.toBeDisplayed]}        
-      </div>
-    );
-  }
-}
+                   this.setState({ wardrobe: visibleItems });
+                   this.setState(prev => ({
+                     removed: [...prev.removed, ...hiddenItems]
+                   }));
+                 };
+
+                 render() {
+                   const displayComponets = [
+                     <StartPageMain />,
+                     <SlidersPage
+                       wardrobe={this.state.wardrobe}
+                       keywords={this.state.keywords}
+                       colors={this.state.colors}
+                       remove={this.remove}
+                     />,
+                     <MyWardrobe />,
+                     <AddElement />
+                   ];
+
+                   return (
+                     <div className="startPage">
+                       <Header />
+                       <Navigation
+                         navigate={this.navigate}
+                         toBeDisplayed={this.toBeDisplayed}
+                       />
+                       {
+                         displayComponets[
+                           this.state.toBeDisplayed
+                         ]
+                       }
+                     </div>
+                   );
+                 }
+               }

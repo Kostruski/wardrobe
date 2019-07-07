@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import hide from './style/icons/hide.png'
 const images = require.context("../public/itemsImg", true);
 
 export default class DressSlider extends Component {
@@ -18,7 +19,7 @@ export default class DressSlider extends Component {
 
   componentDidMount() {
     
-    const arr = this.state.arr;
+    const arr = this.state.arr
     const toShow = [];
     arr.forEach((el, i) => {
       const itemKeyWords = [
@@ -29,7 +30,7 @@ export default class DressSlider extends Component {
       ];
       if (
         this.state.keywords.every(item => itemKeyWords.includes(item)) &&
-        this.state.colors.includes(el.color)
+        this.state.colors.includes(el.color) 
       )
         toShow.push(i);
     });
@@ -60,6 +61,7 @@ export default class DressSlider extends Component {
     const items = arr.map(el => (
       <div key={el.id}>
         <img src={images(`${el.src}`)} />
+        <img onClick={() => {this.props.remove(el.id)}} className="hide" src={hide}/>
       </div>
     ));
 

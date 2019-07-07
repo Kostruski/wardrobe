@@ -1,9 +1,8 @@
 import React from "react";
-
 import DressSlider from "./dressSlider.js";
 import FirstTopSlider from "./firstTopSlider.js";
 
-class StartPage extends React.Component {
+class SlidersPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,28 +17,29 @@ class StartPage extends React.Component {
   }
 
   componentDidMount() {
-    const items = this.state.wardrobe.myItems;
+    const items = this.state.wardrobe;
     items.forEach(el =>
-      this.setState(prev => ({ [el.type]: [...prev[el.type], el] })) //rozsypuje szafę po odpowiednich półkach
+      this.setState(prev => ({ [el.type]: [...prev[el.type], el] })) 
     );
   }
 
   render() {
     
+    
     if (this.state.dress.length > 0) {
       return (
         <div className="slidersWrap">
           <DressSlider
-            key={0}
             items={this.state.dress}
             colors={this.props.colors}
             keywords={this.props.keywords}
+            remove={this.props.remove}
           />
           <FirstTopSlider
-            key={1}
             items={this.state.firstTop}
             colors={this.props.colors}
             keywords={this.props.keywords}
+            
           />
         </div>
       );
@@ -49,4 +49,4 @@ class StartPage extends React.Component {
   }
 }
 
-export default StartPage;
+export default SlidersPage;
