@@ -23,6 +23,25 @@ class SlidersPage extends React.Component {
     );
   }
 
+  componentDidUpdate(prev) {
+    if(this.props.wardrobe !== prev.wardrobe) {
+      this.setState({
+        wardrobe: this.props.wardrobe,
+        firstTop: [],
+        secondTop: [],
+        dress: [],
+        bottom: [],
+        shoes: [],
+        accessories: []
+      })
+      const items = this.props.wardrobe;
+      items.forEach(el =>
+        this.setState(prev => ({ [el.type]: [...prev[el.type], el] })) 
+      );
+
+    }
+  }
+
   render() {
     
     
@@ -33,13 +52,13 @@ class SlidersPage extends React.Component {
             items={this.state.dress}
             colors={this.props.colors}
             keywords={this.props.keywords}
-            remove={this.props.remove}
+            toggleRemove={this.props.toggleRemove}
           />
           <FirstTopSlider
             items={this.state.firstTop}
             colors={this.props.colors}
             keywords={this.props.keywords}
-            
+            toggleRemove={this.props.toggleRemove}            
           />
         </div>
       );

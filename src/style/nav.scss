@@ -5,22 +5,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    div {
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
+   
     .underlined {
        height: 1px;
        width: 110%;
        background: black;
        transition: width 0.5s;
+       z-index: 10;
     }
     span {
         margin-top: 3px;
-        width: 0%;          
+        width: 0%;        
+        
+    }
+    a {
+        text-decoration: none;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        padding: 0;
         
     }
 }

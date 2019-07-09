@@ -37,6 +37,29 @@ export default class DressSlider extends Component {
     this.setState({ toShow });
   }
 
+
+  componentDidUpdate(prev) {
+    if(this.props.items !== prev.items) {
+      const arr = this.props.items
+      const toShow = [];
+      arr.forEach((el, i) => {
+        const itemKeyWords = [
+          ...el.temperature,
+          ...el.timeOfDay,
+          ...el.style,
+          el.pattern
+        ];
+        if (
+          this.state.keywords.every(item => itemKeyWords.includes(item)) &&
+          this.state.colors.includes(el.color) 
+        )
+          toShow.push(i);
+      });
+      this.setState({ toShow : toShow, arr: arr });
+
+    }
+  }
+
   showSelected = () => {
    
     const indexOfSlideToShow = this.state.count % this.state.toShow.length;
@@ -61,7 +84,7 @@ export default class DressSlider extends Component {
     const items = arr.map(el => (
       <div key={el.id}>
         <img src={images(`${el.src}`)} />
-        <img onClick={() => {this.props.remove(el.id)}} className="hide" src={hide}/>
+        <img onClick={() => {this.props.toggleRemove(el.id)}} className="hide" src={hide}/>
       </div>
     ));
 

@@ -3,3 +3,4 @@ export const toggleUnderline = e => {
   boxes.forEach(el => el.classList.remove("underlined"));
   e.target.firstElementChild.classList.add("underlined");
 };
+
