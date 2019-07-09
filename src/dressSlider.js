@@ -89,8 +89,7 @@ export default class DressSlider extends Component {
     ));
 
     return (
-      <div className="slideBox">
-    
+      <div className="slideBox">    
         <Slider ref={slider => (this.slider = slider)} {...settings}>
           {items}
         </Slider>

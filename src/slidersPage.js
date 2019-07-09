@@ -52,13 +52,13 @@ class SlidersPage extends React.Component {
             items={this.state.dress}
             colors={this.props.colors}
             keywords={this.props.keywords}
-            toggleRemove={this.props.toggleRemove}
+            toggleRemove={this.props.remove}
           />
           <FirstTopSlider
             items={this.state.firstTop}
             colors={this.props.colors}
             keywords={this.props.keywords}
-            toggleRemove={this.props.toggleRemove}            
+            toggleRemove={this.props.remove}            
           />
         </div>
       );
