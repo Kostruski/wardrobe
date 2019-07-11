@@ -1,0 +1,10 @@
+.dummy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+}

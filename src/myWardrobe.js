@@ -25,10 +25,20 @@ export default class MyWardrobe extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       arrows: true
     };
+
+    const settingsMulti = {
+      dots: false,
+       infinite: true,
+       speed: 500,
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       arrows: true
+     };
+    
 
     const arr = this.state.wardrobe;
     const hiddenArr = this.state.removed;
@@ -62,20 +72,24 @@ export default class MyWardrobe extends Component {
 
     const hiddenSlider =
       this.props.removed.length > 0 ? (
-        <div className="allItemsSlider">
-          <div className="slideBox">
-            <Slider {...settings}>{hiddenItems}</Slider>
+       
+          <div className="slideBox hidden">
+            <Slider {...settingsMulti}>
+                {hiddenItems}
+            </Slider>
           </div>
-        </div>
+       
       ) : null;
 
     return (
       <div className="myWardrobe">
-        <div className="allItemsSlider ">
-          <div className="slideBox">
+        <div className="textDiv">all your wardrobe</div>
+        <div className="allItemsSlider  ">
+          <div className="slideBox all">
             <Slider {...settings}>{items}</Slider>
           </div>
-        </div>
+          <div className="textDiv">removed items</div>  
+         </div>
         {hiddenSlider}
       </div>
     );

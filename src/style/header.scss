@@ -1,4 +1,15 @@
 .header {
+
     grid-area: h;
-    background: whitesmoke;
+    background:black;
+    height: 30px;
+    color: white;
+    padding-left: 50px;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 25px;
+    h1 {
+        height: 100%;
+        line-height: 30px;
+    }
 }

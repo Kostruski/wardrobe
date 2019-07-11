@@ -2,5 +2,82 @@
     grid-area: s;
     width: 100%;
     height: 100%;
-    background: brown;
-}
+    display: flex;
+    font-size: 20px;
+    letter-spacing: 7px;
+  
+    .startMainImg {
+      width: 59%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #keyWordsForm {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .colorsBox {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+    }
+    .radios,
+    .radiosRow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+
+    }
+
+    #submitForm {
+      color: white;
+      background-color: black;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 5px;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    .formText {
+      font-size: 30px;
+      padding-bottom: 30px;
+
+    }
+
+    .radiosRow {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid black;
+    }
+
+    .radioCover {
+      padding-bottom: 10px; 
+    }
+
+    .startCover {
+      max-height: 100vh;
+      width: auto;
+    }
+
+   
+ 
+
+
+
+
+  }

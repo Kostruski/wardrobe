@@ -1,18 +1,12 @@
 .nav {
     grid-area: n;
-    background: whitesmoke;
+    // background: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
    
-    // .underlined {
-    //    height: 1px;
-    //    width: 110%;
-    //    background: black;
-    //    transition: width 0.5s;
-    //    z-index: 10;
-    // }
+
     span {
         margin-top: 3px;
         width: 0%;        
