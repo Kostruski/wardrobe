@@ -1,4 +1,4 @@
-https://kostruski.github.io/wardrobe/
-plan your look,
-avoid buying clothes that will not match your wardrobe,
+https://kostruski.github.io/wardrobe/ <br>
+plan your look, <br>
+avoid buying clothes that will not match your wardrobe,<br>
 create your unique style
