@@ -1,5 +1,6 @@
 {
   "name": "wardrobe",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -65,7 +66,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "rm -rf build docs && react-scripts build && mv build docs",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
