@@ -59,20 +59,34 @@ class SlidersPage extends React.Component {
 
     if (this.state.dress.length > 0 && this.state.topAndBottom === false) {
       return (
-        <div className="slidersAllWarp">
+        
+         
+          <div className="slidersWrap">
+
+
+        
+          <div className="topandbottom">
+          <div className="topandkeys">
           <div className="togletop" onClick={this.toggleTopAndBottom}>
             <span>{text}</span>
           </div>
           <div className="keywordsBox">
             {[" ", ...this.state.keywords, ...this.state.colors].join(" #")}
           </div>
-          <div className="slidersWrap">
+          </div>
+
+            
+
+
+
+
             <SecondTopSlider
               items={this.state.secondTop}
               colors={this.props.colors}
               keywords={this.props.keywords}
               toggleRemove={this.props.remove}
             />
+            </div>
 
             <DressSlider
               items={this.state.dress}
@@ -95,42 +109,49 @@ class SlidersPage extends React.Component {
               />
             </div>
           </div>
-        </div>
+       
       );
     } else if (this.state.dress.length > 0 && this.state.topAndBottom) {
       return (
-        <div>
-          <div className="togletop" onClick={this.toggleTopAndBottom}>
-            <span>{text}</span>
-          </div>
-          <div className="keywordsBox">
-            {[" ", ...this.state.keywords, ...this.state.colors].join(" #")}
+        <div className="slidersWrap">
+          <div className="topandbottom">
+            <div className="topandkeys">
+              <div className="togletop" onClick={this.toggleTopAndBottom}>
+                <span>{text}</span>
+              </div>
+              <div className="keywordsBox">
+                {[" ", ...this.state.keywords, ...this.state.colors].join(
+                  " #"
+                )}
+              </div>
+              </div>
+
+              <SecondTopSlider
+                items={this.state.secondTop}
+                colors={this.props.colors}
+                keywords={this.props.keywords}
+                toggleRemove={this.props.remove}
+              />
+            
           </div>
 
-          <div className="slidersWrap">
-            <SecondTopSlider
-              items={this.state.secondTop}
+          <div className="topandbottom" id="topandbottom">
+            <FirstTopSlider
+              items={this.state.firstTop}
               colors={this.props.colors}
               keywords={this.props.keywords}
               toggleRemove={this.props.remove}
             />
 
-            <div className="topandbottom">
-              <FirstTopSlider
-                items={this.state.firstTop}
-                colors={this.props.colors}
-                keywords={this.props.keywords}
-                toggleRemove={this.props.remove}
-              />
+            <BottomSlider
+              items={this.state.bottom}
+              colors={this.props.colors}
+              keywords={this.props.keywords}
+              toggleRemove={this.props.remove}
+            />
+          </div>
 
-              <BottomSlider
-                items={this.state.bottom}
-                colors={this.props.colors}
-                keywords={this.props.keywords}
-                toggleRemove={this.props.remove}
-              />
-            </div>
-            <div className="topandbottom">
+          <div id="shoesandbags" className="topandbottom">
               <AcessoriesSlider
                 items={this.state.acessories}
                 colors={this.props.colors}
@@ -143,7 +164,6 @@ class SlidersPage extends React.Component {
                 keywords={this.props.keywords}
                 toggleRemove={this.props.remove}
               />
-            </div>
           </div>
         </div>
       );

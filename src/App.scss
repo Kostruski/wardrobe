@@ -7,12 +7,13 @@
 @import './style/startPageMain.scss';
 @import "./style/keyWordsRadio.scss";
 @import './style/index.scss';
-@import './style/goShopping.scss'
+@import './style/goShopping.scss';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none !important;
   }
 
  .App {

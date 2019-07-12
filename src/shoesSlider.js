@@ -100,18 +100,19 @@ export default class ShoesSlider extends Component {
 
     const arr = this.state.arr;
 
-    const items = arr.map(el => (
-      <div key={el.id}>
-        <img src={images(`${el.src}`)} />
-        <img
-          onClick={() => {
-            this.props.toggleRemove(el.id);
-          }}
-          className="hide"
-          src={hide}
-        />
-      </div>
-    ));
+const items = arr.map(el => (
+  <div key={el.id}>
+    <img src={images(`${el.src}`)} />
+    <div className="sliderTextBox" >
+      <span className="first" onClick={this.showSelected} >Browse selected</span>
+      <span className="second" onClick={() => {
+        this.props.toggleRemove(el.id);
+      }}>Hide Item</span>
+
+    </div>
+
+  </div>
+));
 
     if (this.state.toShowEmpty === false)
       return (
@@ -119,23 +120,17 @@ export default class ShoesSlider extends Component {
           <Slider ref={slider => (this.slider = slider)} {...settings}>
             {items}
           </Slider>
-          <div onClick={this.showSelected} className="sliderTextBox" >
-            <span>Press to browse selected</span>
            </div>
-        </div>
       );
     else
       return (
         <div className="slideBoxWrap">
            <GoShopping hideMissingItem={this.hideMissingItem} type="shoes" />
-          <div className="slideBox">
+          <div className="slideBox shoesSlider">
              <Slider ref={slider => (this.slider = slider)} {...settings}>
               {items}
             </Slider>
-            <div onClick={this.showSelected} className="sliderTextBox" >
-              <span>Press to browse selected</span>
-            </div>
-          </div>
+           </div>
         </div>
       );
   }

@@ -103,13 +103,14 @@ export default class DressSlider extends Component {
     const items = arr.map(el => (
       <div key={el.id}>
         <img src={images(`${el.src}`)} />
-        <img
-          onClick={() => {
+        <div className="sliderTextBox" >
+          <span className="first" onClick={this.showSelected} >Browse selected</span>
+          <span className="second" onClick={() => {
             this.props.toggleRemove(el.id);
-          }}
-          className="hide"
-          src={hide}
-        />
+          }}>Hide Item</span>
+
+        </div>
+
       </div>
     ));
 
@@ -119,28 +120,18 @@ export default class DressSlider extends Component {
           <Slider ref={slider => (this.slider = slider)} {...settings}>
             {items}
           </Slider>
-          <div onClick={this.showSelected} className="sliderTextBox">
-            <span>Press to browse selected</span>
-            <p>
-              {[" ", ...this.state.keywords, ...this.state.colors].join(" #")}
-            </p>
-          </div>
+         
         </div>
       );
     else
       return (
-        <div className="slideBoxWrap">
+        <div className="slideBoxWrap dressSlider">
            <GoShopping hideMissingItem={this.hideMissingItem} type="dress" />
           <div className="slideBox">
              <Slider ref={slider => (this.slider = slider)} {...settings}>
               {items}
             </Slider>
-            <div onClick={this.showSelected} className="sliderTextBox">
-              <span>Press to browse selected</span>
-              <p>
-                {[" ", ...this.state.keywords, ...this.state.colors].join(" #")}
-              </p>
-            </div>
+         
           </div>
         </div>
       );

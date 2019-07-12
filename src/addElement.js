@@ -6,7 +6,7 @@ import loading from './style/icons/loading.gif'
 import React, { Component } from "react";
 
 const season = ["cold","chilly","warm","hot"];
-const timeOfDay = ["work", "afterhours" , "weekend"];
+const timeOfDay = ["work", "afterhours" ];
 const style = ["elegant", "casual" , "sport"];
 const pattern = [ "pattern", "plain", "print"]
 const colors = ["white", "black" , "gray" , "green" , "brown" , "blue" , "red" , "pink" , "orange" , "navy" , "violet" , "yellow"]
@@ -32,7 +32,7 @@ export default class AddElement extends Component {
 
     render() {
 
-        const text = this.state.uploaded ? `Congratualtions, You just added a new item to your vitrual wardrobe` :`Upload images of your clothes to create virtual wardobe`
+        const text = this.state.uploaded ? `Congratulations, You just added a new item to your virtual wardrobe` :`Upload images of your clothes to create virtual wardobe`
         const imgSrc = this.state.loading ? loading : place
         return (
             <div className="addElement">

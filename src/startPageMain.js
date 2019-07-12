@@ -4,7 +4,7 @@ import KeyWordsRadio from "./keyWordsRadio.js";
 import fig from './style/icons/fig.jpg'
 
 const season = ["cold","chilly","warm","hot"];
-const timeOfDay = ["work", "afterhours" , "weekend"];
+const timeOfDay = ["work", "afterhours" ];
 const style = ["elegant", "casual" , "sport"];
 const pattern = [ "pattern", "plain", "print"]
 const colors = ["white", "black" , "gray" , "green" , "brown" , "blue" , "red" , "pink" , "orange" , "navy" , "violet" , "yellow"]
