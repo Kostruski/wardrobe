@@ -18,7 +18,8 @@ export default class AddElement extends Component {
         uploaded: false
     }
 
-    upload = () => {
+    upload = (e) => {
+       e.preventDefault()
         this.setState({loading: true})
         setTimeout(()=> {
             this.setState({loading: false, uploaded: true}) 
